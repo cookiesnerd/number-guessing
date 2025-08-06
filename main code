@@ -1,26 +1,33 @@
 import string
 import random
-
+attemps = 0
 digit = int(random.choice(string.digits))
 
 
 if digit in [2,4,6,8,10]:
     print("the number is even!")
-elif digit < 6:
+if digit < 6:
     print("its lower than 5")
-elif digit > 5:
+if digit > 5:
     print("the number is higher than 5")
-elif digit == 5:
+if digit == 5:
     print("this is a weird position...")
 
 
 while True:
     choice = input("Whats your guess?: ")
-    choice = int(choice)
+    try:
+        choice = int(choice)
+        attemps += 1
+    except:
+        print("INVALID NUMBER")
+        choice = -1
     if choice == digit:
         print("CORRECT!")
+        print(f"Attemps: {attemps}")
+        attemps += 1
         break
     else:
         print("Incorrect try again!")
-
+        attemps += 1
 
