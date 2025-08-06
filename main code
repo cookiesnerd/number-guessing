@@ -1,0 +1,26 @@
+import string
+import random
+
+digit = int(random.choice(string.digits))
+
+
+if digit in [2,4,6,8,10]:
+    print("the number is even!")
+elif digit < 6:
+    print("its lower than 5")
+elif digit > 5:
+    print("the number is higher than 5")
+elif digit == 5:
+    print("this is a weird position...")
+
+
+while True:
+    choice = input("Whats your guess?: ")
+    choice = int(choice)
+    if choice == digit:
+        print("CORRECT!")
+        break
+    else:
+        print("Incorrect try again!")
+
+
